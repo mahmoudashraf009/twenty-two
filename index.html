@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twenty Two | مقترح وتطوير المتجر الإلكتروني</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,800;1,400&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Confetti Container for Success State -->
+    <div id="confetti-container"></div>
+
+    <!-- Main Navigation Bar -->
+    <header class="main-nav">
+        <div class="nav-container">
+            <div class="brand-logo">
+                <span class="logo-number">22</span>
+                <span class="logo-text">TWENTY TWO</span>
+            </div>
+            <div class="nav-tabs">
+                <button class="tab-btn active" onclick="switchTab('proposal')">
+                    <i class="fa-solid fa-briefcase"></i> العرض التقديمي
+                </button>
+                <button class="tab-btn" onclick="switchTab('demo')">
+                    <i class="fa-solid fa-store"></i> متجر تجريبي تفاعلي
+                </button>
+            </div>
+            <div class="nav-actions">
+                <span class="badge-status"><span class="dot"></span> مسودة أولية للعميل</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+
+        <!-- ================= SECTION 1: PROPOSAL (PITCH) ================= -->
+        <section id="proposal-section" class="tab-content active">
+            <div class="proposal-container">
+                
+                <!-- Slide Show Controller -->
+                <div class="slide-deck">
+                    
+                    <!-- Slide 1: Cover -->
+                    <div class="slide active" id="slide-1">
+                        <div class="slide-grid cover-slide">
+                            <div class="slide-text">
+                                <span class="tag-accent">دراسة تطوير وتنشيط مبيعات</span>
+                                <h1 class="main-title text-gradient-sand">براند TWENTY TWO للملابس</h1>
+                                <p class="lead-text">رؤية كاملة للانتقال من البيع اليدوي على إنستجرام إلى متجر Shopify ذكي مؤتمت لزيادة المبيعات بنسبة 40% وتوفير 80% من وقت العمل.</p>
+                                <div class="prepared-by">
+                                    <p>مُقَدّم للعميل بواسطة: <strong>محمود أشرف</strong></p>
+                                    <p>يونيو 2026</p>
+                                </div>
+                                <button class="btn btn-primary" onclick="nextSlide()">ابدأ العرض <i class="fa-solid fa-arrow-left"></i></button>
+                            </div>
+                            <div class="slide-visual cover-visual">
+                                <div class="visual-card">
+                                    <div class="mock-browser">
+                                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                                        <div class="mock-img-wrapper">
+                                            <img src="assets/hero_banner.png" alt="Twenty Two Lookbook">
+                                        </div>
+                                    </div>
+                                    <div class="floating-badge badge-1">
+                                        <i class="fa-solid fa-chart-line"></i> +40% زيادة في التحويل
+                                    </div>
+                                    <div class="floating-badge badge-2">
+                                        <i class="fa-solid fa-bolt"></i> طلب في 30 ثانية
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: The Problem -->
+                    <div class="slide" id="slide-2">
+                        <div class="slide-grid">
+                            <div class="slide-text">
+                                <span class="tag-accent tag-warning">الوضع الحالي</span>
+                                <h2 class="slide-title text-gradient-sand">لماذا يحد البيع عبر إنستجرام فقط من نمو Twenty Two؟</h2>
+                                <p class="slide-desc">البيع عبر الرسائل الخاصة (DMs) ممتاز للبدايات، لكنه يتحول لعقبة كبيرة مع نمو البراند:</p>
+                                
+                                <div class="problem-list">
+                                    <div class="problem-item">
+                                        <div class="prob-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                                        <div class="prob-details">
+                                            <h4>تأخر الردود = خسارة زبائن</h4>
+                                            <p>العميل ينتظر لساعات للرد على المقاس أو السعر، وفي كثير من الأحيان يغير رأيه أو يشتري من منافس أسرع.</p>
+                                        </div>
+                                    </div>
+                                    <div class="problem-item">
+                                        <div class="prob-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                                        <div class="prob-details">
+                                            <h4>أخطاء المقاسات والمخزون</h4>
+                                            <p>تحديث المخزون يتم يدوياً، مما يؤدي لبيع قطع غير متوفرة فعلياً في المخزن، وحدوث مشاكل مقاسات معقدة.</p>
+                                        </div>
+                                    </div>
+                                    <div class="problem-item">
+                                        <div class="prob-icon"><i class="fa-solid fa-database"></i></div>
+                                        <div class="prob-details">
+                                            <h4>فقدان بيانات العملاء</h4>
+                                            <p>أرقام هواتف وعناوين عملائك مبعثرة في الشات، ولا يمكنك إعادة استهدافهم بعروض أو منتجات جديدة بسهولة.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-visual">
+                                <div class="stat-container">
+                                    <div class="stat-box">
+                                        <h3>%32</h3>
+                                        <p>من الزبائن يتراجعون عن الشراء إذا استغرق الرد في الخاص أكثر من 15 دقيقة.</p>
+                                    </div>
+                                    <div class="stat-box">
+                                        <h3>%85</h3>
+                                        <p>من طلبات الشباب للملابس تتم عبر الموبايل مباشرة وبشكل ذاتي دون الحاجة للتحدث مع أحد.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: The Solution -->
+                    <div class="slide" id="slide-3">
+                        <div class="slide-grid">
+                            <div class="slide-text">
+                                <span class="tag-accent tag-success">الحل المقترح</span>
+                                <h2 class="slide-title text-gradient-sand">كيف سيغير متجر Shopify لعبة المبيعات؟</h2>
+                                <p class="slide-desc">تأسيس متجر إلكتروني ذكي يعمل على مدار الساعة ويقوم بالبيع والفوترة تلقائياً:</p>
+                                
+                                <div class="solution-grid">
+                                    <div class="sol-card">
+                                        <div class="sol-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                                        <h4>تجربة شراء في 30 ثانية</h4>
+                                        <p>العميل يدخل المتجر، يرى المنتج، يختار المقاس واللون، ويتم الطلب فوراً ببياناته.</p>
+                                    </div>
+                                    <div class="sol-card">
+                                        <div class="sol-icon"><i class="fa-solid fa-rotate"></i></div>
+                                        <h4>ربط ومزامنة المخزون</h4>
+                                        <p>إذا نفدت قطعة أو مقاس، تختفي فوراً من العرض، مما يمنع البيع الخاطئ تماماً.</p>
+                                    </div>
+                                    <div class="sol-card">
+                                        <div class="sol-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                                        <h4>شحن ودفع تلقائي</h4>
+                                        <p>حساب تكلفة الشحن تلقائياً حسب المحافظة وربط الأوردرات بسيستم شركة الشحن فوراً.</p>
+                                    </div>
+                                    <div class="sol-card">
+                                        <div class="sol-icon"><i class="fa-solid fa-bullseye"></i></div>
+                                        <h4>تتبع ذكي وإعلانات ناجحة</h4>
+                                        <p>ربط الـ Pixel لتسجيل حركات العملاء وإعادة استهدافهم بإعلانات ممولة عالية العائد.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-visual">
+                                <div class="benefit-box">
+                                    <img src="assets/oversized_tee.png" alt="Store Feature Preview" class="benefit-img">
+                                    <div class="benefit-overlay">
+                                        <h4>توفير وقت غير محدود</h4>
+                                        <p>بدلاً من إمضاء 5 ساعات في جمع البيانات يدوياً، سيصلك إشعار على هاتفك: <strong>"تم استلام طلب جديد بقيمة 1200 جنيه"</strong>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Features -->
+                    <div class="slide" id="slide-4">
+                        <div class="slide-grid">
+                            <div class="slide-text">
+                                <span class="tag-accent">المواصفات التقنية</span>
+                                <h2 class="slide-title text-gradient-sand">ميزات متطورة مصممة لبراند Twenty Two</h2>
+                                <p class="slide-desc">خصائص قوية سنقوم بتضمينها في المتجر لجعله منافساً لأكبر براندات الملابس:</p>
+                                
+                                <div class="feature-bullets">
+                                    <div class="feat-bullet">
+                                        <div class="feat-bullet-icon"><i class="fa-solid fa-circle-play"></i></div>
+                                        <div>
+                                            <strong>فيديوهات تفاعلية (Shoppable Videos / Reels):</strong>
+                                            <span>نعرض الفيديوهات الترويجية للملابس وبجانبها زرار الشراء المباشر للقطعة المعروضة.</span>
+                                        </div>
+                                    </div>
+                                    <div class="feat-bullet">
+                                        <div class="feat-bullet-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+                                        <div>
+                                            <strong>جدول مقاسات ذكي وسهل:</strong>
+                                            <span>يظهر في صفحة كل منتج لمنع لَبْس المقاسات وتقليل المرتجعات.</span>
+                                        </div>
+                                    </div>
+                                    <div class="feat-bullet">
+                                        <div class="feat-bullet-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                                        <div>
+                                            <strong>زر محادثة واتساب عائم:</strong>
+                                            <span>للدعم الفني السريع للعملاء لزيادة ثقتهم في الموقع.</span>
+                                        </div>
+                                    </div>
+                                    <div class="feat-bullet">
+                                        <div class="feat-bullet-icon"><i class="fa-solid fa-tags"></i></div>
+                                        <div>
+                                            <strong>منظومة خصومات وكوبونات:</strong>
+                                            <span>إنشاء عروض مثل "اشترِ قطعتين واحصل على الثالثة مجاناً" بسهولة لزيادة متوسط قيمة الطلب.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-visual">
+                                <div class="phone-frame-mock">
+                                    <div class="phone-screen">
+                                        <div class="phone-status-bar">
+                                            <span>9:41</span>
+                                            <div class="phone-icons"><i class="fa-solid fa-signal"></i> <i class="fa-solid fa-battery-three-quarters"></i></div>
+                                        </div>
+                                        <div class="phone-web-content">
+                                            <div class="mini-header">TWENTY TWO</div>
+                                            <div class="mini-reel">
+                                                <i class="fa-solid fa-play"></i>
+                                                <span>فيديو تفاعلي للشراء</span>
+                                            </div>
+                                            <div class="mini-prod-info">
+                                                <h5>تيشرت أوفرسايز بيزك</h5>
+                                                <p>450 EGP</p>
+                                                <button class="mini-btn">أضف للسلة <i class="fa-solid fa-bag-shopping"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Roadmap & Pricing -->
+                    <div class="slide" id="slide-5">
+                        <div class="pricing-slide-content">
+                            <div class="pricing-slide-header">
+                                <span class="tag-accent tag-success">خطة الأسعار والباقات المقترحة</span>
+                                <h2 class="slide-title text-gradient-sand">تكلفتك كام عشان تعمل موقع؟ اختر باقتك الأنسب</h2>
+                                <p class="slide-desc" style="max-width: 700px; margin: 0 auto;">اختر الباقة اللي تناسب ميزانيتك وحجم المحل، وكل باقة معاها توضيح بسيط عشان تفهم إيه اللي هتحصل عليه:</p>
+                            </div>
+                            
+                            <div class="pricing-packages-container">
+                                <!-- Package 1 -->
+                                <div class="pkg-card">
+                                    <div class="pkg-header">
+                                        <h3>الباقة الاقتصادية</h3>
+                                        <p class="pkg-sub">موقع شوبيفاي أساسي تبدأ تبيع عليه وتستقبل طلبات علطول، بسيط وسريع.</p>
+                                        <div class="pkg-price">9,000 <span>EGP</span></div>
+                                    </div>
+                                    <ul class="pkg-features">
+                                        <li><i class="fa-solid fa-check"></i> <strong>قالب مجاني وسريع:</strong> متناسق مع ألوان براند الملابس ومناسب جداً للموبايل.</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>ترتيب أقسام المتجر:</strong> تنظيم الملابس في مجموعات (تيشرتات، بنطلونات...).</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>رفع أول 20 منتج:</strong> هنرفعلك عينة من منتجاتك بالمقاسات والأسعار عشان المتجر يكون جاهز.</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>ربط الدومين والدفع:</strong> ربط اسم موقعك (Domain) وتفعيل الدفع عند الاستلام (COD).</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Package 2 -->
+                                <div class="pkg-card recommended">
+                                    <div class="pkg-header">
+                                        <h3>الباقة الاحترافية</h3>
+                                        <p class="pkg-sub">متجر كامل متكامل بالإعلانات والفيديوهات التفاعلية، مناسب جداً لبراند ملابس بينمو بسرعة.</p>
+                                        <div class="pkg-price">15,000 <span>EGP</span></div>
+                                    </div>
+                                    <ul class="pkg-features">
+                                        <li><i class="fa-solid fa-check"></i> <strong>كل ميزات الباقة الاقتصادية</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>قالب بريميوم فخم:</strong> تصميم مميز جداً شبه المواقع البراندات الكبيرة عشان يعطي ثقة للمشتري.</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>الفيديوهات التفاعلية (Reels):</strong> نفس الميزة الموجودة في الـ Demo للشراء من الفيديو مباشرة.</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>ربط بكسل الإعلانات (Pixels):</strong> ربط بكسل تيك توك وفيسبوك عشان إعلاناتك تكون ناجحة ومستهدفة.</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>ربط شحن تلقائي:</strong> ربط مع شركات زي بوسطة/أرامكس عشان تطبع بوالص الشحن بضغطة زر.</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>شات واتساب وجدول مقاسات:</strong> للرد السريع على الزباين وجدول يمنع لَبْس المقاسات ويقلل المرتجعات.</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>فيديو تدريب كامل:</strong> هسجلك فيديو أشرحلك فيه إزاي تضيف منتجاتك وتعدل أسعارك بنفسك بعد كدا.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Package 3 -->
+                                <div class="pkg-card">
+                                    <div class="pkg-header">
+                                        <h3>الباقة الكاملة (VIP)</h3>
+                                        <p class="pkg-sub">تعديلات برمجية مخصصة، كتابة محتوى للمنتجات، ودعم فني ممتد عشان تريح دماغك خالص.</p>
+                                        <div class="pkg-price">22,000 <span>EGP</span></div>
+                                    </div>
+                                    <ul class="pkg-features">
+                                        <li><i class="fa-solid fa-check"></i> <strong>كل ميزات الباقة الاحترافية</strong></li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>تعديلات برمجية مخصصة:</strong> لو حابب ميزات خاصة مش موجودة في القوالب الجاهزة.</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>تهيئة سيو للمنتجات (SEO):</strong> كتابة وصف منتجات احترافي يخليك تظهر في بحث جوجل.</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>تصميم هوية كاملة:</strong> تصميم لوجو احترافي وتنسيق ألوان خاص بالبراند.</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>رفع كافة المنتجات:</strong> هنرفعلك كل بضاعة المحل (حتى 100 منتج) عشان تستلم المتجر شغال فوراً.</li>
+                                        <li><i class="fa-solid fa-check"></i> <strong>دعم فني لمدة شهرين:</strong> صيانة مجانية وحل أي مشكلة تظهر بعد الإطلاق.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="pricing-slide-footer">
+                                <p>⚠️ <strong>ملحوظة :</strong> السعر لا يشمل اشتراك شوبيفاي الشهري (حوالي 39$ شهرياً) ودومين المتجر (14$ سنوياً) - يتحملها العميل بفيزته الخاصة مباشرة لشوبيفاي.</p>
+                                <p>⏱️ <strong>مدة التسليم:</strong> الاقتصادية (4 أيام) | الاحترافية (7 أيام) | VIP الكاملة (10-14 يوم عمل).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide Controllers -->
+                    <div class="slide-controls">
+                        <button class="control-btn" id="prev-btn" onclick="prevSlide()" disabled><i class="fa-solid fa-chevron-right"></i> السابق</button>
+                        <div class="slide-dots">
+                            <span class="dot active" onclick="goToSlide(1)"></span>
+                            <span class="dot" onclick="goToSlide(2)"></span>
+                            <span class="dot" onclick="goToSlide(3)"></span>
+                            <span class="dot" onclick="goToSlide(4)"></span>
+                            <span class="dot" onclick="goToSlide(5)"></span>
+                        </div>
+                        <button class="control-btn btn-next-tab" id="next-btn" onclick="nextSlide()">التالي <i class="fa-solid fa-chevron-left"></i></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= SECTION 2: LIVE STORE DEMO ================= -->
+        <section id="demo-section" class="tab-content">
+            
+            <!-- Viewport Mode Switcher (Desktop vs Mobile simulation) -->
+            <div class="viewport-switcher">
+                <button class="viewport-btn active" id="btn-view-mobile" onclick="setViewport('mobile')">
+                    <i class="fa-solid fa-mobile-screen-button"></i> موبايل (موصى به)
+                </button>
+                <button class="viewport-btn" id="btn-view-desktop" onclick="setViewport('desktop')">
+                    <i class="fa-solid fa-desktop"></i> لابتوب / شاشة كاملة
+                </button>
+            </div>
+
+            <!-- Store Container -->
+            <div class="store-viewport mobile-mode" id="store-viewport-element">
+                <div class="simulated-device-frame">
+                    
+                    <!-- Simulated Phone Notch/Camera & Info (Only visible in mobile mode) -->
+                    <div class="device-notch-bar">
+                        <span class="device-time">01:08 AM</span>
+                        <div class="device-camera"></div>
+                        <div class="device-status">
+                            <i class="fa-solid fa-wifi"></i>
+                            <i class="fa-solid fa-signal"></i>
+                            <i class="fa-solid fa-battery-full"></i>
+                        </div>
+                    </div>
+
+                    <!-- Shopify Store Content Window -->
+                    <div class="store-iframe-content">
+                        
+                        <!-- Store Header -->
+                        <header class="store-header">
+                            <div class="store-header-top">
+                                <div class="store-menu-icon"><i class="fa-solid fa-bars-staggered"></i></div>
+                                <div class="store-logo">TWENTY TWO</div>
+                                <div class="store-header-actions">
+                                    <div class="store-search-btn"><i class="fa-solid fa-magnifying-glass"></i></div>
+                                    <div class="store-cart-btn" onclick="toggleCart(true)">
+                                        <i class="fa-solid fa-bag-shopping"></i>
+                                        <span class="cart-badge">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Announcement Bar -->
+                            <div class="announcement-bar">
+                                شحن مجاني لجميع المحافظات عند الشراء بـ 1000 جنيه أو أكثر!
+                            </div>
+                        </header>
+
+                        <!-- Store Body (Scrollable) -->
+                        <div class="store-body">
+
+                            <!-- Hero Banner Section -->
+                            <section class="store-hero">
+                                <img src="assets/hero_banner.png" alt="Summer Collection" class="hero-bg-img">
+                                <div class="hero-overlay-content">
+                                    <span class="hero-tag">NEW COLLECTION</span>
+                                    <h2>SUMMER DROP '26</h2>
+                                    <p>كولكشن الصيف بلمسة شبابية فريدة وألوان عصرية تناسب يومك.</p>
+                                    <a href="#products-list" class="store-btn store-btn-primary">تسوق الآن <i class="fa-solid fa-arrow-left"></i></a>
+                                </div>
+                            </section>
+
+                            <!-- NEW FEATURE: Shoppable Reels (فيديوهات تفاعلية) -->
+                            <section class="shoppable-reels-section">
+                                <div class="section-title">
+                                    <h3>فيديوهات تفاعلية من إنستجرام 🎥</h3>
+                                    <p>اضغط على الفيديو لمشاهدة الحركة واشترِ بضغطة واحدة مباشرة!</p>
+                                </div>
+                                <div class="reels-container">
+                                    
+                                    <!-- Reel Card 1 -->
+                                    <div class="reel-card">
+                                        <div class="video-wrapper">
+                                            <video src="assets/video1.mp4" loop muted playsinline></video>
+                                            <div class="video-overlay-play"><i class="fa-solid fa-play"></i></div>
+                                            <div class="video-mute-btn"><i class="fa-solid fa-volume-xmark"></i></div>
+                                        </div>
+                                        <div class="reel-product-tag" onclick="quickBuy('tee')">
+                                            <div class="tag-thumb">
+                                                <img src="assets/oversized_tee.png" alt="Oversized Tee">
+                                            </div>
+                                            <div class="tag-details">
+                                                <h5>تيشرت أوفرسايز أسود</h5>
+                                                <span>450 EGP</span>
+                                            </div>
+                                            <div class="tag-buy-icon"><i class="fa-solid fa-cart-plus"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Reel Card 2 -->
+                                    <div class="reel-card">
+                                        <div class="video-wrapper">
+                                            <video src="assets/video2.mp4" loop muted playsinline></video>
+                                            <div class="video-overlay-play"><i class="fa-solid fa-play"></i></div>
+                                            <div class="video-mute-btn"><i class="fa-solid fa-volume-xmark"></i></div>
+                                        </div>
+                                        <div class="reel-product-tag" onclick="quickBuy('pants')">
+                                            <div class="tag-thumb">
+                                                <img src="assets/cargo_pants.png" alt="Cargo Pants">
+                                            </div>
+                                            <div class="tag-details">
+                                                <h5>بنطلون كارغو كاجوال</h5>
+                                                <span>650 EGP</span>
+                                            </div>
+                                            <div class="tag-buy-icon"><i class="fa-solid fa-cart-plus"></i></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+
+                            <!-- Product Categories Section -->
+                            <section class="categories-nav">
+                                <span class="cat-pill active">الكل</span>
+                                <span class="cat-pill">تيشرتات</span>
+                                <span class="cat-pill">بنطلونات</span>
+                                <span class="cat-pill">قمصان صيفية</span>
+                            </section>
+
+                            <!-- Product Grid Section -->
+                            <section class="products-grid" id="products-list">
+                                
+                                <!-- Product Card 1 -->
+                                <div class="product-card" id="prod-tee">
+                                    <div class="product-badge text-new">جديد</div>
+                                    <div class="prod-img-wrapper" onclick="openProductModal('tee')">
+                                        <img src="assets/oversized_tee.png" alt="Oversized Streetwear Tee" class="prod-img">
+                                        <div class="prod-hover-actions">
+                                            <span>عرض التفاصيل <i class="fa-solid fa-eye"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <span class="prod-cat">تيشرتات</span>
+                                        <h4 class="prod-name" onclick="openProductModal('tee')">تيشرت Oversized أسود جرافيك</h4>
+                                        <div class="prod-price-row">
+                                            <span class="price">450 EGP</span>
+                                            <span class="old-price">550 EGP</span>
+                                        </div>
+                                        <div class="prod-sizes">
+                                            <span>S</span><span>M</span><span>L</span><span>XL</span>
+                                        </div>
+                                        <button class="store-btn store-btn-outline" onclick="quickAddToCart('tee')">
+                                            أضف للسلة <i class="fa-solid fa-bag-shopping"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Product Card 2 -->
+                                <div class="product-card" id="prod-pants">
+                                    <div class="product-badge text-sale">خصم %15</div>
+                                    <div class="prod-img-wrapper" onclick="openProductModal('pants')">
+                                        <img src="assets/cargo_pants.png" alt="Olive Cargo Pants" class="prod-img">
+                                        <div class="prod-hover-actions">
+                                            <span>عرض التفاصيل <i class="fa-solid fa-eye"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <span class="prod-cat">بنطلونات</span>
+                                        <h4 class="prod-name" onclick="openProductModal('pants')">بنطلون كارغو فضفاض زيتوني</h4>
+                                        <div class="prod-price-row">
+                                            <span class="price">650 EGP</span>
+                                            <span class="old-price">750 EGP</span>
+                                        </div>
+                                        <div class="prod-sizes">
+                                            <span>M</span><span>L</span><span>XL</span><span>XXL</span>
+                                        </div>
+                                        <button class="store-btn store-btn-outline" onclick="quickAddToCart('pants')">
+                                            أضف للسلة <i class="fa-solid fa-bag-shopping"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Product Card 3 -->
+                                <div class="product-card" id="prod-knit">
+                                    <div class="prod-img-wrapper" onclick="openProductModal('knit')">
+                                        <img src="assets/summer_knit.png" alt="Cream Summer Knit Shirt" class="prod-img">
+                                        <div class="prod-hover-actions">
+                                            <span>عرض التفاصيل <i class="fa-solid fa-eye"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <span class="prod-cat">قمصان صيفية</span>
+                                        <h4 class="prod-name" onclick="openProductModal('knit')">قميص صيفي تريكو كريمي</h4>
+                                        <div class="prod-price-row">
+                                            <span class="price">550 EGP</span>
+                                        </div>
+                                        <div class="prod-sizes">
+                                            <span>S</span><span>M</span><span>L</span><span>XL</span>
+                                        </div>
+                                        <button class="store-btn store-btn-outline" onclick="quickAddToCart('knit')">
+                                            أضف للسلة <i class="fa-solid fa-bag-shopping"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <!-- Footer Info -->
+                            <footer class="store-footer">
+                                <div class="footer-logo">TWENTY TWO</div>
+                                <p>متجر تجريبي تفاعلي مخصص لبراند Twenty Two. جميع الحقوق محفوظة لعام 2026.</p>
+                                <div class="social-links-mock">
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <i class="fa-brands fa-tiktok"></i>
+                                    <i class="fa-brands fa-facebook"></i>
+                                </div>
+                            </footer>
+
+                        </div> <!-- End Store Body -->
+
+                        <!-- WhatsApp Floating Button -->
+                        <div class="whatsapp-mock-btn">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span class="tooltip-mock">تواصل معنا</span>
+                        </div>
+
+                    </div> <!-- End Store Content Window -->
+
+                    <!-- Sliding Cart Drawer (opens from right/left depending on dir) -->
+                    <div class="cart-drawer-overlay" id="cart-drawer">
+                        <div class="cart-drawer-content">
+                            <div class="cart-header">
+                                <h3>سلة المشتريات (<span id="cart-count-title">0</span>)</h3>
+                                <button class="close-cart-btn" onclick="toggleCart(false)"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="cart-items-container" id="cart-items-list">
+                                <!-- Cart Items Dynamically Injected Here -->
+                                <div class="empty-cart-message">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                    <p>سلتك فارغة حالياً</p>
+                                    <button class="store-btn store-btn-primary" onclick="toggleCart(false)">ابدأ التسوق</button>
+                                </div>
+                            </div>
+                            <div class="cart-footer">
+                                <div class="cart-subtotal-row">
+                                    <span>المجموع الفرعي:</span>
+                                    <span id="cart-subtotal-price">0 EGP</span>
+                                </div>
+                                <p class="shipping-info-text">الشحن مجاني لطلبك! 🚚</p>
+                                <button class="store-btn store-btn-primary checkout-trigger-btn" onclick="openCheckoutModal()">
+                                    إتمام الطلب والدفع عند الاستلام <i class="fa-solid fa-lock"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Detail Modal (Quick View) -->
+                    <div class="product-modal-overlay" id="product-modal">
+                        <div class="product-modal-content">
+                            <button class="close-modal-btn" onclick="closeProductModal()"><i class="fa-solid fa-xmark"></i></button>
+                            <div class="modal-grid">
+                                <div class="modal-gallery">
+                                    <img src="" alt="" id="modal-product-img">
+                                </div>
+                                <div class="modal-details">
+                                    <span class="modal-prod-cat" id="modal-product-cat">الملابس</span>
+                                    <h3 class="modal-prod-name" id="modal-product-name">اسم المنتج</h3>
+                                    <div class="modal-price-row">
+                                        <span class="modal-price" id="modal-product-price">0 EGP</span>
+                                        <span class="modal-old-price" id="modal-product-old-price"></span>
+                                    </div>
+                                    <p class="modal-desc" id="modal-product-desc">خامة قطنية 100% عالية الجودة ومريحة جداً، بتصميم فريد وعصري يليق بستايلك اليومي.</p>
+                                    
+                                    <!-- Size Selection -->
+                                    <div class="selection-section">
+                                        <label>المقاس: <span id="selected-size-label">M</span></label>
+                                        <div class="size-options-container" id="modal-size-container">
+                                            <!-- Dynamically generated size buttons -->
+                                        </div>
+                                        <span class="size-chart-link" onclick="toggleSizeChart(true)"><i class="fa-solid fa-ruler"></i> جدول المقاسات</span>
+                                    </div>
+
+                                    <!-- Add to Cart Button -->
+                                    <div class="modal-action-row">
+                                        <button class="store-btn store-btn-primary add-to-cart-action-btn" onclick="addProductFromModal()">
+                                            أضف إلى السلة <i class="fa-solid fa-bag-shopping"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Size Chart Modal -->
+                    <div class="size-chart-overlay" id="size-chart-modal">
+                        <div class="size-chart-content">
+                            <div class="size-chart-header">
+                                <h3>جدول مقاسات Twenty Two 📏</h3>
+                                <button class="close-chart-btn-x" onclick="toggleSizeChart(false)"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="size-chart-table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>المقاس</th>
+                                            <th>العرض (سم)</th>
+                                            <th>الطول (سم)</th>
+                                            <th>الوزن المقدر (كجم)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>S</strong></td>
+                                            <td>54</td>
+                                            <td>68</td>
+                                            <td>55 - 65 كجم</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>M</strong></td>
+                                            <td>57</td>
+                                            <td>71</td>
+                                            <td>65 - 75 كجم</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>L</strong></td>
+                                            <td>60</td>
+                                            <td>74</td>
+                                            <td>75 - 85 كجم</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>XL</strong></td>
+                                            <td>63</td>
+                                            <td>77</td>
+                                            <td>85 - 95 كجم</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>XXL</strong></td>
+                                            <td>66</td>
+                                            <td>80</td>
+                                            <td>95 - 110 كجم</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="chart-tip">* جميع المقاسات قد تختلف بمقدار 1-2 سم بسبب طبيعة الأقمشة الكاجوال والـ Oversized.</p>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Simulated Modal -->
+                    <div class="checkout-overlay" id="checkout-modal">
+                        <div class="checkout-content">
+                            <div class="checkout-header">
+                                <h3>Shopify Checkout <i class="fa-solid fa-lock"></i></h3>
+                                <button class="close-checkout-btn" onclick="closeCheckoutModal()"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="checkout-progress">
+                                <span class="active">الشحن</span>
+                                <i class="fa-solid fa-chevron-left"></i>
+                                <span>الدفع</span>
+                                <i class="fa-solid fa-chevron-left"></i>
+                                <span>تأكيد الطلب</span>
+                            </div>
+                            
+                            <form id="checkout-form" onsubmit="submitCheckout(event)">
+                                <div class="checkout-grid">
+                                    <!-- Form Inputs -->
+                                    <div class="checkout-info-side">
+                                        <h4>بيانات الشحن والتوصيل</h4>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="c-name">الاسم بالكامل *</label>
+                                                <input type="text" id="c-name" placeholder="محمد أحمد" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="c-phone">رقم الموبايل *</label>
+                                                <input type="tel" id="c-phone" placeholder="01234567890" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="c-city">المحافظة *</label>
+                                                <select id="c-city" onchange="updateShippingCost()" required>
+                                                    <option value="القاهرة">القاهرة</option>
+                                                    <option value="الجيزة">الجيزة</option>
+                                                    <option value="الإسكندرية">الإسكندرية</option>
+                                                    <option value="الدقهلية">الدقهلية</option>
+                                                    <option value="الغربية">الغربية</option>
+                                                    <option value="أخرى">محافظة أخرى</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="c-address">العنوان بالتفصيل *</label>
+                                                <input type="text" id="c-address" placeholder="اسم الشارع، رقم العمارة، الشقة" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <h4 style="margin-top:20px;">طريقة الدفع</h4>
+                                        <div class="payment-methods">
+                                            <div class="pay-option active">
+                                                <input type="radio" id="pay-cod" name="payment-method" checked>
+                                                <label for="pay-cod">
+                                                    <strong>الدفع عند الاستلام (COD)</strong>
+                                                    <span>ادفع نقداً عند استلام الطلب من المندوب</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Summary Side -->
+                                    <div class="checkout-summary-side">
+                                        <h4>ملخص الطلب</h4>
+                                        <div id="checkout-summary-items">
+                                            <!-- Checkout items injected here -->
+                                        </div>
+                                        <div class="summary-totals">
+                                            <div class="summary-total-row">
+                                                <span>المنتجات:</span>
+                                                <span id="checkout-items-total">0 EGP</span>
+                                            </div>
+                                            <div class="summary-total-row">
+                                                <span>الشحن:</span>
+                                                <span id="checkout-shipping-total">مجاّني</span>
+                                            </div>
+                                            <hr>
+                                            <div class="summary-total-row grand-total">
+                                                <span>المجموع الكلي:</span>
+                                                <span id="checkout-grand-total">0 EGP</span>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="store-btn store-btn-primary submit-order-btn">
+                                            تأكيد الطلب الآن <i class="fa-solid fa-check"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Success Screen -->
+                    <div class="checkout-success-overlay" id="success-screen">
+                        <div class="success-box">
+                            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <h3>تم استلام طلبك بنجاح! 🎉</h3>
+                            <p>رقم الطلب الخاص بك هو: <strong>#1024</strong></p>
+                            <p class="success-desc">تمت محاكاة عملية شراء ناجحة على متجر Twenty Two بنجاح! في المتجر الحقيقي لشوبيفاي، سيصلك إشعار فوري على الموبايل بالأوردر، وسيتم تحديث المخزون وحفظ العميل في قاعدة بياناتك.</p>
+                            <button class="store-btn store-btn-primary" onclick="closeSuccessScreen()">العودة للتسوق</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="app.js?v=2"></script>
+</body>
+</html>
